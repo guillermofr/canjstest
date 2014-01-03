@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kit de inicio CanJS</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h2>
+		Listado de películas 
+		<button id="addElement">Añadir Elemento</button>
+	</h2>
+
+	<div id="content">Contenido</div>
+
+	<script type="text/javascript" src="libs/jquery.js"></script>
+	<script type="text/javascript" src="libs/can.js"></script>
+	<script type="text/javascript" src="libs/handlebars.min.js"></script>
+	<script type="text/javascript" src="main_control_jquery.js"></script>
+
+	<script id="list_template" type="text/x-handlebars-template">
+		<span>Total: {{thelist.length}}</span>
+		{{#each thelist}}
+			<div>
+				<a class="close" href="#" data-index="{{@index}}">X</a>
+				<h3 class="title" data-index="{{@index}}">{{titulo}}</h3>
+				<p>{{pais}}</p>
+			</div>
+		{{/each}}
+	</script>
+</body>
+</html>
